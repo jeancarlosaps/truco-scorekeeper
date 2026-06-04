@@ -1,0 +1,37 @@
+### Android ###
+*.apk
+*.ap_
+*.aab
+
+# Build outputs
+/build/
+app/build/
+
+# Gradle
+.gradle/
+gradle/wrapper/gradle-wrapper.jar
+
+# Local config — never commit
+local.properties
+
+# Android Studio
+.idea/
+*.iml
+*.iws
+*.ipr
+*.hprof
+
+# Captures & profiling
+/captures/
+.externalNativeBuild/
+.cxx/
+
+# Keystore — sensitive
+*.jks
+*.keystore
+
+# DS_Store (macOS)
+.DS_Store
+
+# Kotlin Incremental
+.kotlin/

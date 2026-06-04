@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.TrucoScorekeeper" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/verde_feltro</item>
+        <item name="colorPrimaryDark">@color/verde_feltro_dark</item>
+        <item name="colorAccent">@color/texto_ouro</item>
+        <item name="android:windowBackground">@color/verde_feltro</item>
+    </style>
+</resources>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="verde_feltro">#1b4332</color>
+    <color name="verde_feltro_dark">#0f261d</color>
+    <color name="branco_carta">#FFFFFF</color>
+    <color name="vermelho_baralho">#B71C1C</color>
+    <color name="madeira_botao">#5c3d2e</color>
+    <color name="texto_ouro">#FFD700</color>
+</resources>
