@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/verde_feltro"
+    tools:context=".NomesActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/verde_feltro_dark"
+        app:navigationIconTint="@color/texto_ouro"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_nomes_titulo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/nomes_titulo"
+        android:textColor="@color/texto_ouro"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <EditText
+        android:id="@+id/et_nome_jogador1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="32dp"
+        android:hint="@string/nomes_hint_jogador_1"
+        android:textColor="@color/branco_carta"
+        android:textColorHint="#80FFFFFF"
+        android:textSize="16sp"
+        android:background="@color/verde_feltro_dark"
+        android:padding="12dp"
+        android:inputType="textPersonName"
+        android:maxLines="1"
+        app:layout_constraintTop_toBottomOf="@id/tv_nomes_titulo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <EditText
+        android:id="@+id/et_nome_jogador2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"
+        android:hint="@string/nomes_hint_jogador_2"
+        android:textColor="@color/branco_carta"
+        android:textColorHint="#80FFFFFF"
+        android:textSize="16sp"
+        android:background="@color/verde_feltro_dark"
+        android:padding="12dp"
+        android:inputType="textPersonName"
+        android:maxLines="1"
+        app:layout_constraintTop_toBottomOf="@id/et_nome_jogador1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/btn_confirmar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="24dp"
+        android:minHeight="48dp"
+        android:text="@string/nomes_confirmar"
+        android:textColor="@color/branco_carta"
+        android:textStyle="bold"
+        android:backgroundTint="@color/madeira_botao"
+        app:layout_constraintTop_toBottomOf="@id/et_nome_jogador2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

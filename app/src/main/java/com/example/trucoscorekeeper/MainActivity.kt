@@ -3,12 +3,25 @@ package com.example.trucoscorekeeper
 import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.example.trucoscorekeeper.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+
+    private val nomesLauncher = registerForActivityResult(
+        ActivityResultContracts.StartActivityForResult()
+    ) { result ->
+        if (result.resultCode == RESULT_OK) {
+            result.data?.let { data ->
+                nomeJogador1 = data.getStringExtra(NomesActivity.EXTRA_NOVO_NOME_JOGADOR_1) ?: nomeJogador1
+                nomeJogador2 = data.getStringExtra(NomesActivity.EXTRA_NOVO_NOME_JOGADOR_2) ?: nomeJogador2
+                atualizarPlacar()
+            }
+        }
+    }
 
     private var pontosJogador1 = 0
     private var pontosJogador2 = 0
@@ -28,6 +41,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun configurarBotoes() {
         binding.btnHistorico.setOnClickListener { abrirHistorico() }
+        binding.btnNomes.setOnClickListener { abrirTelaNomes() }
 
         binding.btnJ1Mais1.setOnClickListener  { adicionarPontos(1,  jogador = 1) }
         binding.btnJ1Mais3.setOnClickListener  { adicionarPontos(3,  jogador = 1) }
@@ -77,6 +91,14 @@ class MainActivity : AppCompatActivity() {
         pontosJogador1 = 0
         pontosJogador2 = 0
         atualizarPlacar()
+    }
+
+    private fun abrirTelaNomes() {
+        val intent = Intent(this, NomesActivity::class.java).apply {
+            putExtra(NomesActivity.EXTRA_NOME_ATUAL_JOGADOR_1, nomeJogador1)
+            putExtra(NomesActivity.EXTRA_NOME_ATUAL_JOGADOR_2, nomeJogador2)
+        }
+        nomesLauncher.launch(intent)
     }
 
     private fun abrirHistorico() {

@@ -24,6 +24,12 @@
             android:label="@string/historico_toolbar_title"
             android:parentActivityName=".MainActivity" />
 
+        <activity
+            android:name=".NomesActivity"
+            android:exported="false"
+            android:label="@string/nomes_toolbar_title"
+            android:parentActivityName=".MainActivity" />
+
     </application>
 
 </manifest>
