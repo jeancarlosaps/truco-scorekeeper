@@ -13,4 +13,9 @@
     <string name="btn_historico">Histórico de Jogadas</string>
     <string name="btn_zerar">Zerar Histórico</string>
     <string name="btn_nomes">Informar Nomes</string>
+
+    <!-- Histórico de Partidas -->
+    <string name="historico_toolbar_title">Histórico</string>
+    <string name="historico_titulo">🏆 Histórico de Partidas</string>
+    <string name="historico_label_jogador">%s</string>
 </resources>

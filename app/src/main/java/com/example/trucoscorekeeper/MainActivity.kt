@@ -1,6 +1,7 @@
 package com.example.trucoscorekeeper
 
 import android.app.AlertDialog
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.trucoscorekeeper.databinding.ActivityMainBinding
@@ -26,6 +27,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun configurarBotoes() {
+        binding.btnHistorico.setOnClickListener { abrirHistorico() }
+
         binding.btnJ1Mais1.setOnClickListener  { adicionarPontos(1,  jogador = 1) }
         binding.btnJ1Mais3.setOnClickListener  { adicionarPontos(3,  jogador = 1) }
         binding.btnJ1Mais6.setOnClickListener  { adicionarPontos(6,  jogador = 1) }
@@ -74,5 +77,15 @@ class MainActivity : AppCompatActivity() {
         pontosJogador1 = 0
         pontosJogador2 = 0
         atualizarPlacar()
+    }
+
+    private fun abrirHistorico() {
+        val intent = Intent(this, HistoricoActivity::class.java).apply {
+            putExtra(HistoricoActivity.EXTRA_NOME_JOGADOR_1, nomeJogador1)
+            putExtra(HistoricoActivity.EXTRA_NOME_JOGADOR_2, nomeJogador2)
+            putExtra(HistoricoActivity.EXTRA_VITORIAS_JOGADOR_1, partidasGanhasJogador1)
+            putExtra(HistoricoActivity.EXTRA_VITORIAS_JOGADOR_2, partidasGanhasJogador2)
+        }
+        startActivity(intent)
     }
 }

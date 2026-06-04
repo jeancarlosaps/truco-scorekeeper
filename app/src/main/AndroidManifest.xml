@@ -18,6 +18,12 @@
             </intent-filter>
         </activity>
 
+        <activity
+            android:name=".HistoricoActivity"
+            android:exported="false"
+            android:label="@string/historico_toolbar_title"
+            android:parentActivityName=".MainActivity" />
+
     </application>
 
 </manifest>

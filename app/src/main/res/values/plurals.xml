@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="historico_vitorias">
+        <item quantity="one">%d vitória</item>
+        <item quantity="other">%d vitórias</item>
+    </plurals>
+</resources>
