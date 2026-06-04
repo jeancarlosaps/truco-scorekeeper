@@ -14,6 +14,13 @@
     <string name="btn_zerar">Zerar Histórico</string>
     <string name="btn_nomes">Informar Nomes</string>
 
+    <!-- Zerar Histórico -->
+    <string name="zerar_dialogo_titulo">Confirmar limpeza</string>
+    <string name="zerar_dialogo_mensagem">Deseja realmente zerar todo o histórico e restaurar os jogadores para os valores padrão?</string>
+    <string name="zerar_dialogo_cancelar">Cancelar</string>
+    <string name="zerar_dialogo_confirmar">Zerar</string>
+    <string name="historico_zerado">Histórico zerado! O balcão foi limpo para a próxima rodada.</string>
+
     <!-- Informar Nomes -->
     <string name="nomes_toolbar_title">Nomes</string>
     <string name="nomes_titulo">📝 Personalizar Jogadores</string>

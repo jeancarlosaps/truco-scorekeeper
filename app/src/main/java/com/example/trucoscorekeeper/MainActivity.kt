@@ -3,6 +3,7 @@ package com.example.trucoscorekeeper
 import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.example.trucoscorekeeper.databinding.ActivityMainBinding
@@ -41,6 +42,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun configurarBotoes() {
         binding.btnHistorico.setOnClickListener { abrirHistorico() }
+        binding.btnZerar.setOnClickListener { confirmarZerarHistorico() }
         binding.btnNomes.setOnClickListener { abrirTelaNomes() }
 
         binding.btnJ1Mais1.setOnClickListener  { adicionarPontos(1,  jogador = 1) }
@@ -91,6 +93,25 @@ class MainActivity : AppCompatActivity() {
         pontosJogador1 = 0
         pontosJogador2 = 0
         atualizarPlacar()
+    }
+
+    private fun confirmarZerarHistorico() {
+        AlertDialog.Builder(this)
+            .setTitle(R.string.zerar_dialogo_titulo)
+            .setMessage(R.string.zerar_dialogo_mensagem)
+            .setNegativeButton(R.string.zerar_dialogo_cancelar, null)
+            .setPositiveButton(R.string.zerar_dialogo_confirmar) { _, _ -> zerarHistorico() }
+            .show()
+    }
+
+    private fun zerarHistorico() {
+        reiniciarRodada()
+        partidasGanhasJogador1 = 0
+        partidasGanhasJogador2 = 0
+        nomeJogador1 = getString(R.string.jogador_1)
+        nomeJogador2 = getString(R.string.jogador_2)
+        atualizarPlacar()
+        Toast.makeText(this, R.string.historico_zerado, Toast.LENGTH_LONG).show()
     }
 
     private fun abrirTelaNomes() {
