@@ -46,6 +46,8 @@
         android:padding="12dp"
         android:inputType="textPersonName"
         android:maxLines="1"
+        android:imeOptions="actionNext"
+        android:nextFocusForward="@id/et_nome_jogador2"
         app:layout_constraintTop_toBottomOf="@id/tv_nomes_titulo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -64,6 +66,7 @@
         android:padding="12dp"
         android:inputType="textPersonName"
         android:maxLines="1"
+        android:imeOptions="actionDone"
         app:layout_constraintTop_toBottomOf="@id/et_nome_jogador1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />

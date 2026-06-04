@@ -6,4 +6,11 @@
         <item name="colorAccent">@color/texto_ouro</item>
         <item name="android:windowBackground">@color/verde_feltro</item>
     </style>
+
+    <style name="Theme.TrucoScorekeeper.AlertDialog" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:windowBackground">@drawable/dialog_background</item>
+        <item name="android:textColorPrimary">@color/branco_carta</item>
+        <item name="android:textColor">@color/branco_carta</item>
+        <item name="colorAccent">@color/texto_ouro</item>
+    </style>
 </resources>

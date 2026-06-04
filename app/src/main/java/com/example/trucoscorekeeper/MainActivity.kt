@@ -81,7 +81,7 @@ class MainActivity : AppCompatActivity() {
     private fun exibirDialogoVitoria(nomeVencedor: String, jogador: Int) {
         if (jogador == 1) partidasGanhasJogador1++ else partidasGanhasJogador2++
 
-        AlertDialog.Builder(this)
+        AlertDialog.Builder(this, R.style.Theme_TrucoScorekeeper_AlertDialog)
             .setTitle("Temos um Vencedor!")
             .setMessage("O $nomeVencedor deitou o cabelo e ganhou a partida!")
             .setPositiveButton("Nova Partida") { _, _ -> reiniciarRodada() }
@@ -96,7 +96,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun confirmarZerarHistorico() {
-        AlertDialog.Builder(this)
+        AlertDialog.Builder(this, R.style.Theme_TrucoScorekeeper_AlertDialog)
             .setTitle(R.string.zerar_dialogo_titulo)
             .setMessage(R.string.zerar_dialogo_mensagem)
             .setNegativeButton(R.string.zerar_dialogo_cancelar, null)
