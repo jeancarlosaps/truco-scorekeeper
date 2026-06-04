@@ -27,7 +27,7 @@ class HistoricoActivity : AppCompatActivity() {
     private fun configurarToolbar() {
         setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.title = getString(R.string.historico_toolbar_title)
+        supportActionBar?.title = ""
     }
 
     private fun exibirHistorico() {
