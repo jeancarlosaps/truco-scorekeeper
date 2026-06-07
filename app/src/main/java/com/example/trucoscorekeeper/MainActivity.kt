@@ -32,6 +32,10 @@ class MainActivity : AppCompatActivity() {
     private var nomeJogador2 = "Equipe B"
     private var ultimaJogadaEquipe1: Jogada? = null
     private var ultimaJogadaEquipe2: Jogada? = null
+    private var sequenciaAtualEquipe1 = 0
+    private var sequenciaAtualEquipe2 = 0
+    private var maiorSequenciaEquipe1 = 0
+    private var maiorSequenciaEquipe2 = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,6 +48,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun configurarBotoes() {
         binding.btnHistorico.setOnClickListener { abrirHistorico() }
+        binding.btnEstatisticas.setOnClickListener { abrirEstatisticas() }
         binding.btnZerar.setOnClickListener { confirmarZerarHistorico() }
         binding.btnNomes.setOnClickListener { abrirTelaNomes() }
 
@@ -123,7 +128,17 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun exibirDialogoVitoria(nomeVencedor: String, jogador: Int) {
-        if (jogador == 1) partidasGanhasJogador1++ else partidasGanhasJogador2++
+        if (jogador == 1) {
+            partidasGanhasJogador1++
+            sequenciaAtualEquipe1++
+            sequenciaAtualEquipe2 = 0
+            maiorSequenciaEquipe1 = maxOf(maiorSequenciaEquipe1, sequenciaAtualEquipe1)
+        } else {
+            partidasGanhasJogador2++
+            sequenciaAtualEquipe2++
+            sequenciaAtualEquipe1 = 0
+            maiorSequenciaEquipe2 = maxOf(maiorSequenciaEquipe2, sequenciaAtualEquipe2)
+        }
 
         AlertDialog.Builder(this, R.style.Theme_TrucoScorekeeper_AlertDialog)
             .setTitle("Temos um Vencedor!")
@@ -154,6 +169,10 @@ class MainActivity : AppCompatActivity() {
         reiniciarRodada()
         partidasGanhasJogador1 = 0
         partidasGanhasJogador2 = 0
+        sequenciaAtualEquipe1 = 0
+        sequenciaAtualEquipe2 = 0
+        maiorSequenciaEquipe1 = 0
+        maiorSequenciaEquipe2 = 0
         nomeJogador1 = getString(R.string.jogador_1)
         nomeJogador2 = getString(R.string.jogador_2)
         atualizarPlacar()
@@ -174,6 +193,18 @@ class MainActivity : AppCompatActivity() {
             putExtra(HistoricoActivity.EXTRA_NOME_JOGADOR_2, nomeJogador2)
             putExtra(HistoricoActivity.EXTRA_VITORIAS_JOGADOR_1, partidasGanhasJogador1)
             putExtra(HistoricoActivity.EXTRA_VITORIAS_JOGADOR_2, partidasGanhasJogador2)
+        }
+        startActivity(intent)
+    }
+
+    private fun abrirEstatisticas() {
+        val intent = Intent(this, EstatisticasActivity::class.java).apply {
+            putExtra(EstatisticasActivity.EXTRA_NOME_EQUIPE_1, nomeJogador1)
+            putExtra(EstatisticasActivity.EXTRA_NOME_EQUIPE_2, nomeJogador2)
+            putExtra(EstatisticasActivity.EXTRA_VITORIAS_EQUIPE_1, partidasGanhasJogador1)
+            putExtra(EstatisticasActivity.EXTRA_VITORIAS_EQUIPE_2, partidasGanhasJogador2)
+            putExtra(EstatisticasActivity.EXTRA_SEQUENCIA_EQUIPE_1, maiorSequenciaEquipe1)
+            putExtra(EstatisticasActivity.EXTRA_SEQUENCIA_EQUIPE_2, maiorSequenciaEquipe2)
         }
         startActivity(intent)
     }

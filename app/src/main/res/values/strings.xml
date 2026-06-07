@@ -32,6 +32,18 @@
     <string name="btn_desfazer">↶ Desfazer</string>
     <string name="sem_jogada_para_desfazer">Nenhuma jogada para desfazer</string>
 
+    <!-- Estatísticas -->
+    <string name="btn_estatisticas">Estatísticas</string>
+    <string name="estatisticas_toolbar_title">Estatísticas</string>
+    <string name="estatisticas_titulo">📊 Estatísticas da Sessão</string>
+    <string name="estatisticas_label_vitorias">Vitórias</string>
+    <string name="estatisticas_label_total">Total de Partidas</string>
+    <string name="estatisticas_label_lider">Equipe Líder</string>
+    <string name="estatisticas_label_sequencia">Maior Sequência</string>
+    <string name="estatisticas_empate">Empate</string>
+    <string name="estatisticas_sem_dados">Nenhuma partida ainda</string>
+    <string name="estatisticas_sequencia_formato">%1$s — %2$d</string>
+
     <!-- Histórico de Partidas -->
     <string name="historico_toolbar_title">Histórico</string>
     <string name="historico_titulo">🏆 Histórico de Partidas</string>

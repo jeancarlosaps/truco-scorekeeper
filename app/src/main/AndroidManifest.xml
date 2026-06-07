@@ -30,6 +30,12 @@
             android:label="@string/nomes_toolbar_title"
             android:parentActivityName=".MainActivity" />
 
+        <activity
+            android:name=".EstatisticasActivity"
+            android:exported="false"
+            android:label="@string/estatisticas_toolbar_title"
+            android:parentActivityName=".MainActivity" />
+
     </application>
 
 </manifest>

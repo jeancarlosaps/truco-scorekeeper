@@ -362,6 +362,18 @@
                 app:cornerRadius="8dp" />
 
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_estatisticas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:minHeight="52dp"
+                android:text="@string/btn_estatisticas"
+                android:textColor="@color/branco_carta"
+                android:textStyle="bold"
+                app:backgroundTint="@color/madeira_botao"
+                app:cornerRadius="8dp" />
+
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_zerar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
