@@ -2,8 +2,8 @@
 <resources>
     <string name="app_name">Truco Scorekeeper</string>
     <string name="titulo_app">Truco Scorekeeper</string>
-    <string name="jogador_1">Jogador 1</string>
-    <string name="jogador_2">Jogador 2</string>
+    <string name="jogador_1">Equipe A</string>
+    <string name="jogador_2">Equipe B</string>
     <string name="pontuacao_inicial">00</string>
     <string name="btn_mais_1">+1</string>
     <string name="btn_mais_3">+3</string>
@@ -16,16 +16,16 @@
 
     <!-- Zerar Histórico -->
     <string name="zerar_dialogo_titulo">Confirmar limpeza</string>
-    <string name="zerar_dialogo_mensagem">Deseja realmente zerar todo o histórico e restaurar os jogadores para os valores padrão?</string>
+    <string name="zerar_dialogo_mensagem">Deseja realmente zerar todo o histórico e restaurar as equipes para os valores padrão?</string>
     <string name="zerar_dialogo_cancelar">Cancelar</string>
     <string name="zerar_dialogo_confirmar">Zerar</string>
     <string name="historico_zerado">Histórico zerado! O balcão foi limpo para a próxima rodada.</string>
 
     <!-- Informar Nomes -->
     <string name="nomes_toolbar_title">Nomes</string>
-    <string name="nomes_titulo">📝 Personalizar Jogadores</string>
-    <string name="nomes_hint_jogador_1">Nome do Jogador 1</string>
-    <string name="nomes_hint_jogador_2">Nome do Jogador 2</string>
+    <string name="nomes_titulo">📝 Personalizar Equipes</string>
+    <string name="nomes_hint_jogador_1">Nome da Equipe A</string>
+    <string name="nomes_hint_jogador_2">Nome da Equipe B</string>
     <string name="nomes_confirmar">Confirmar</string>
 
     <!-- Histórico de Partidas -->

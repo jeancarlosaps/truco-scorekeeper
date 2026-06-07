@@ -28,8 +28,8 @@ class MainActivity : AppCompatActivity() {
     private var pontosJogador2 = 0
     private var partidasGanhasJogador1 = 0
     private var partidasGanhasJogador2 = 0
-    private var nomeJogador1 = "Jogador 1"
-    private var nomeJogador2 = "Jogador 2"
+    private var nomeJogador1 = "Equipe A"
+    private var nomeJogador2 = "Equipe B"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

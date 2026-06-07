@@ -8,7 +8,7 @@ Aplicativo Android para controle de pontuação em partidas de Truco — desenvo
 
 Trabalho final da disciplina **Android Básico** da Pós-Graduação em Programação para Dispositivos Móveis da **UTFPR**.
 
-O objetivo é oferecer uma forma simples e intuitiva de controlar partidas de Truco: registrar pontos, acompanhar o histórico de vitórias e personalizar os nomes dos jogadores, tudo em uma interface temática inspirada nas mesas de feltro verde.
+O objetivo é oferecer uma forma simples e intuitiva de controlar partidas de Truco: registrar pontos, acompanhar o histórico de vitórias e personalizar os nomes das equipes, tudo em uma interface temática inspirada nas mesas de feltro verde.
 
 ---
 
@@ -16,8 +16,8 @@ O objetivo é oferecer uma forma simples e intuitiva de controlar partidas de Tr
 
 - Controle de pontuação individual (+1, +3, +6, +9 e +12)
 - Validação automática de vitória ao atingir 12 pontos
-- Histórico de partidas ganhas por cada jogador
-- Personalização dos nomes dos jogadores
+- Histórico de partidas ganhas por cada equipe
+- Personalização dos nomes das equipes
 - Reinicialização completa do histórico
 - Interface temática inspirada em mesas de truco
 
@@ -47,9 +47,9 @@ O objetivo é oferecer uma forma simples e intuitiva de controlar partidas de Tr
 
 <img src="docs/images/history.png" alt="Histórico de Partidas" width="300"/>
 
-### Personalização dos Jogadores
+### Personalização das Equipes
 
-<img src="docs/images/players.png" alt="Personalização dos Jogadores" width="300"/>
+<img src="docs/images/players.png" alt="Personalização das Equipes" width="300"/>
 
 ### Vitória Detectada
 
@@ -64,8 +64,8 @@ truco-scorekeeper/
 ├── app/src/main/
 │   ├── java/com/example/trucoscorekeeper/
 │   │   ├── MainActivity.kt         # Tela principal: placar e botões de pontuação
-│   │   ├── HistoricoActivity.kt    # Exibe partidas ganhas por cada jogador
-│   │   └── NomesActivity.kt        # Personalização dos nomes dos jogadores
+│   │   ├── HistoricoActivity.kt    # Exibe partidas ganhas por cada equipe
+│   │   └── NomesActivity.kt        # Personalização dos nomes das equipes
 │   └── res/
 │       ├── drawable/               # botao_carta.xml (estilo dos botões de ponto)
 │       ├── layout/                 # activity_main, activity_historico, activity_nomes
