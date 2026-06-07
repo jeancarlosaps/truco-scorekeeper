@@ -5,23 +5,32 @@
     android:viewportWidth="108"
     android:viewportHeight="108">
 
-    <!-- Triângulo Mineiro - ouro -->
+    <!-- sombra suave do triângulo -->
+    <group
+        android:translateX="2"
+        android:translateY="3">
+        <path
+            android:fillColor="#33000000"
+            android:pathData="M 54,11 L 93,77 L 15,77 Z" />
+    </group>
+
+    <!-- Triângulo Mineiro - vermelho -->
+    <path
+        android:fillColor="#B71C1C"
+        android:pathData="M 54,11 L 93,77 L 15,77 Z" />
+
+    <!-- Símbolo de paus (♣) - ouro -->
     <path
         android:fillColor="#FFD700"
-        android:pathData="M 54,15 L 89,75 L 19,75 Z" />
-
-    <!-- Símbolo de paus (♣) em verde feltro - efeito recorte sobre o ouro -->
+        android:pathData="M 54,35 A 8,8,0,1,0,54,51 A 8,8,0,1,0,54,35 Z" />
     <path
-        android:fillColor="#1b4332"
-        android:pathData="M 54,31 A 9,9,0,1,0,54,49 A 9,9,0,1,0,54,31 Z" />
+        android:fillColor="#FFD700"
+        android:pathData="M 46,47 A 8,8,0,1,0,46,63 A 8,8,0,1,0,46,47 Z" />
     <path
-        android:fillColor="#1b4332"
-        android:pathData="M 44,45 A 9,9,0,1,0,44,63 A 9,9,0,1,0,44,45 Z" />
+        android:fillColor="#FFD700"
+        android:pathData="M 62,47 A 8,8,0,1,0,62,63 A 8,8,0,1,0,62,47 Z" />
     <path
-        android:fillColor="#1b4332"
-        android:pathData="M 64,45 A 9,9,0,1,0,64,63 A 9,9,0,1,0,64,45 Z" />
-    <path
-        android:fillColor="#1b4332"
-        android:pathData="M 50,62 L 58,62 L 62,74 L 46,74 Z" />
+        android:fillColor="#FFD700"
+        android:pathData="M 50,63 L 58,63 L 61,75 L 47,75 Z" />
 
 </vector>
