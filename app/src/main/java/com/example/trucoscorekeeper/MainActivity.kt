@@ -2,6 +2,7 @@ package com.example.trucoscorekeeper
 
 import android.app.AlertDialog
 import android.content.Intent
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
@@ -76,6 +77,7 @@ class MainActivity : AppCompatActivity() {
             ultimaJogadaEquipe2 = Jogada(equipe = 2, pontos = valor)
             pontosJogador2 += valor
         }
+        tocarSom(R.raw.card_slap)
         atualizarPlacar()
         verificarVitoria()
     }
@@ -98,6 +100,7 @@ class MainActivity : AppCompatActivity() {
             pontosJogador2 = maxOf(0, pontosJogador2 - jogada.pontos)
             ultimaJogadaEquipe2 = null
         }
+        tocarSom(R.raw.swoosh)
         atualizarPlacar()
     }
 
@@ -140,6 +143,8 @@ class MainActivity : AppCompatActivity() {
             maiorSequenciaEquipe2 = maxOf(maiorSequenciaEquipe2, sequenciaAtualEquipe2)
         }
 
+        tocarSom(R.raw.chora_fregues)
+
         AlertDialog.Builder(this, R.style.Theme_TrucoScorekeeper_AlertDialog)
             .setTitle("Temos um Vencedor!")
             .setMessage("O $nomeVencedor deitou o cabelo e ganhou a partida!")
@@ -166,6 +171,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun zerarHistorico() {
+        tocarSom(R.raw.swoosh)
         reiniciarRodada()
         partidasGanhasJogador1 = 0
         partidasGanhasJogador2 = 0
@@ -177,6 +183,13 @@ class MainActivity : AppCompatActivity() {
         nomeJogador2 = getString(R.string.jogador_2)
         atualizarPlacar()
         Toast.makeText(this, R.string.historico_zerado, Toast.LENGTH_LONG).show()
+    }
+
+    private fun tocarSom(resId: Int) {
+        MediaPlayer.create(this, resId)?.apply {
+            setOnCompletionListener { it.release() }
+            start()
+        }
     }
 
     private fun abrirTelaNomes() {
