@@ -30,6 +30,8 @@ class MainActivity : AppCompatActivity() {
     private var partidasGanhasJogador2 = 0
     private var nomeJogador1 = "Equipe A"
     private var nomeJogador2 = "Equipe B"
+    private var ultimaJogadaEquipe1: Jogada? = null
+    private var ultimaJogadaEquipe2: Jogada? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,6 +47,9 @@ class MainActivity : AppCompatActivity() {
         binding.btnZerar.setOnClickListener { confirmarZerarHistorico() }
         binding.btnNomes.setOnClickListener { abrirTelaNomes() }
 
+        binding.btnDesfazerEquipe1.setOnClickListener { desfazerJogada(equipe = 1) }
+        binding.btnDesfazerEquipe2.setOnClickListener { desfazerJogada(equipe = 2) }
+
         binding.btnJ1Mais1.setOnClickListener  { adicionarPontos(1,  jogador = 1) }
         binding.btnJ1Mais3.setOnClickListener  { adicionarPontos(3,  jogador = 1) }
         binding.btnJ1Mais6.setOnClickListener  { adicionarPontos(6,  jogador = 1) }
@@ -59,9 +64,36 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun adicionarPontos(valor: Int, jogador: Int) {
-        if (jogador == 1) pontosJogador1 += valor else pontosJogador2 += valor
+        if (jogador == 1) {
+            ultimaJogadaEquipe1 = Jogada(equipe = 1, pontos = valor)
+            pontosJogador1 += valor
+        } else {
+            ultimaJogadaEquipe2 = Jogada(equipe = 2, pontos = valor)
+            pontosJogador2 += valor
+        }
         atualizarPlacar()
         verificarVitoria()
+    }
+
+    private fun desfazerJogada(equipe: Int) {
+        if (equipe == 1) {
+            val jogada = ultimaJogadaEquipe1
+            if (jogada == null) {
+                Toast.makeText(this, R.string.sem_jogada_para_desfazer, Toast.LENGTH_SHORT).show()
+                return
+            }
+            pontosJogador1 = maxOf(0, pontosJogador1 - jogada.pontos)
+            ultimaJogadaEquipe1 = null
+        } else {
+            val jogada = ultimaJogadaEquipe2
+            if (jogada == null) {
+                Toast.makeText(this, R.string.sem_jogada_para_desfazer, Toast.LENGTH_SHORT).show()
+                return
+            }
+            pontosJogador2 = maxOf(0, pontosJogador2 - jogada.pontos)
+            ultimaJogadaEquipe2 = null
+        }
+        atualizarPlacar()
     }
 
     private fun atualizarPlacar() {
@@ -69,6 +101,18 @@ class MainActivity : AppCompatActivity() {
         binding.tvNomeJogador2.text = nomeJogador2
         binding.tvPontuacaoJogador1.text = String.format("%02d", pontosJogador1)
         binding.tvPontuacaoJogador2.text = String.format("%02d", pontosJogador2)
+        atualizarEstadoBotoesDesfazer()
+    }
+
+    private fun atualizarEstadoBotoesDesfazer() {
+        val temJogada1 = ultimaJogadaEquipe1 != null
+        val temJogada2 = ultimaJogadaEquipe2 != null
+
+        binding.btnDesfazerEquipe1.isEnabled = temJogada1
+        binding.btnDesfazerEquipe1.alpha = if (temJogada1) 1f else 0.4f
+
+        binding.btnDesfazerEquipe2.isEnabled = temJogada2
+        binding.btnDesfazerEquipe2.alpha = if (temJogada2) 1f else 0.4f
     }
 
     private fun verificarVitoria() {
@@ -92,6 +136,8 @@ class MainActivity : AppCompatActivity() {
     private fun reiniciarRodada() {
         pontosJogador1 = 0
         pontosJogador2 = 0
+        ultimaJogadaEquipe1 = null
+        ultimaJogadaEquipe2 = null
         atualizarPlacar()
     }
 

@@ -12,7 +12,7 @@
     <string name="btn_mais_12">+12</string>
     <string name="btn_historico">Histórico de Jogadas</string>
     <string name="btn_zerar">Zerar Histórico</string>
-    <string name="btn_nomes">Informar Nomes</string>
+    <string name="btn_nomes">Editar Equipes</string>
 
     <!-- Zerar Histórico -->
     <string name="zerar_dialogo_titulo">Confirmar limpeza</string>
@@ -27,6 +27,10 @@
     <string name="nomes_hint_jogador_1">Nome da Equipe A</string>
     <string name="nomes_hint_jogador_2">Nome da Equipe B</string>
     <string name="nomes_confirmar">Confirmar</string>
+
+    <!-- Desfazer Jogada -->
+    <string name="btn_desfazer">↶ Desfazer</string>
+    <string name="sem_jogada_para_desfazer">Nenhuma jogada para desfazer</string>
 
     <!-- Histórico de Partidas -->
     <string name="historico_toolbar_title">Histórico</string>
