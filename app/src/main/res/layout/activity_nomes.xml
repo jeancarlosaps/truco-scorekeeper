@@ -8,7 +8,7 @@
     android:background="@color/verde_feltro"
     tools:context=".NomesActivity">
 
-    <androidx.appcompat.widget.Toolbar
+    <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/toolbar"
         android:layout_width="0dp"
         android:layout_height="?attr/actionBarSize"
@@ -32,57 +32,76 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <EditText
-        android:id="@+id/et_nome_jogador1"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_nome_jogador1"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
         android:layout_marginTop="32dp"
         android:hint="@string/nomes_hint_jogador_1"
-        android:textColor="@color/branco_carta"
-        android:textColorHint="#80FFFFFF"
-        android:textSize="16sp"
-        android:background="@color/verde_feltro_dark"
-        android:padding="12dp"
-        android:inputType="textPersonName"
-        android:maxLines="1"
-        android:imeOptions="actionNext"
-        android:nextFocusForward="@id/et_nome_jogador2"
+        app:boxStrokeColor="@color/texto_ouro"
+        app:boxStrokeWidthFocused="2dp"
+        app:hintTextColor="@color/texto_ouro"
+        app:counterEnabled="false"
         app:layout_constraintTop_toBottomOf="@id/tv_nomes_titulo"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent">
 
-    <EditText
-        android:id="@+id/et_nome_jogador2"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_nome_jogador1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/branco_carta"
+            android:textSize="16sp"
+            android:inputType="textPersonName"
+            android:maxLines="1"
+            android:imeOptions="actionNext"
+            android:nextFocusForward="@id/et_nome_jogador2" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_nome_jogador2"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
         android:layout_marginTop="16dp"
         android:hint="@string/nomes_hint_jogador_2"
-        android:textColor="@color/branco_carta"
-        android:textColorHint="#80FFFFFF"
-        android:textSize="16sp"
-        android:background="@color/verde_feltro_dark"
-        android:padding="12dp"
-        android:inputType="textPersonName"
-        android:maxLines="1"
-        android:imeOptions="actionDone"
-        app:layout_constraintTop_toBottomOf="@id/et_nome_jogador1"
+        app:boxStrokeColor="@color/texto_ouro"
+        app:boxStrokeWidthFocused="2dp"
+        app:hintTextColor="@color/texto_ouro"
+        app:counterEnabled="false"
+        app:layout_constraintTop_toBottomOf="@id/til_nome_jogador1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent">
 
-    <Button
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_nome_jogador2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/branco_carta"
+            android:textSize="16sp"
+            android:inputType="textPersonName"
+            android:maxLines="1"
+            android:imeOptions="actionDone" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_confirmar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
         android:layout_marginTop="24dp"
-        android:minHeight="48dp"
+        android:minHeight="52dp"
         android:text="@string/nomes_confirmar"
         android:textColor="@color/branco_carta"
         android:textStyle="bold"
-        android:backgroundTint="@color/madeira_botao"
-        app:layout_constraintTop_toBottomOf="@id/et_nome_jogador2"
+        app:backgroundTint="@color/madeira_botao"
+        app:cornerRadius="8dp"
+        app:layout_constraintTop_toBottomOf="@id/til_nome_jogador2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 

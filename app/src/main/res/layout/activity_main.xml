@@ -5,313 +5,340 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/verde_feltro"
+    android:fillViewport="true"
     tools:context=".MainActivity">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="vertical"
         android:padding="16dp">
 
         <!-- Título -->
         <TextView
             android:id="@+id/tv_titulo"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/titulo_app"
             android:textColor="@color/texto_ouro"
             android:textSize="24sp"
             android:textStyle="bold"
             android:gravity="center"
-            android:paddingVertical="12dp"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            android:paddingVertical="8dp" />
 
-        <!-- Área Jogador 1 -->
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <!-- Card Equipe A -->
+        <com.google.android.material.card.MaterialCardView
             android:id="@+id/area_jogador1"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@color/verde_feltro_dark"
-            android:padding="12dp"
-            app:layout_constraintTop_toBottomOf="@id/tv_titulo"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
-
-            <TextView
-                android:id="@+id/tv_nome_jogador1"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="@string/jogador_1"
-                android:textColor="@color/branco_carta"
-                android:textSize="20sp"
-                android:fontFamily="@font/chalkduster"
-                android:gravity="center"
-                android:maxLines="1"
-                android:ellipsize="end"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
-
-            <TextView
-                android:id="@+id/tv_pontuacao_jogador1"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="@string/pontuacao_inicial"
-                android:textColor="@color/texto_ouro"
-                android:textSize="40sp"
-                android:fontFamily="@font/chalkduster"
-                android:gravity="center"
-                android:paddingVertical="8dp"
-                app:layout_constraintTop_toBottomOf="@id/tv_nome_jogador1"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
+            android:layout_marginTop="12dp"
+            app:cardBackgroundColor="@color/verde_feltro_dark"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="6dp"
+            app:strokeColor="@color/texto_ouro"
+            app:strokeWidth="1dp">
 
             <LinearLayout
-                android:id="@+id/ll_botoes_jogador1"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="8dp"
-                app:layout_constraintTop_toBottomOf="@id/tv_pontuacao_jogador1"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent">
+                android:orientation="vertical"
+                android:paddingHorizontal="10dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="6dp">
 
-                <Button
-                    android:id="@+id/btn_j1_mais1"
-                    style="@style/Widget.AppCompat.Button.Borderless"
-                    android:layout_width="0dp"
+                <TextView
+                    android:id="@+id/tv_nome_jogador1"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginHorizontal="2dp"
-                    android:minHeight="48dp"
-                    android:text="@string/btn_mais_1"
-                    android:textColor="@color/vermelho_baralho"
-                    android:textStyle="bold"
-                    android:background="@drawable/botao_carta" />
+                    android:text="@string/jogador_1"
+                    android:textColor="@color/branco_carta"
+                    android:textSize="20sp"
+                    android:fontFamily="@font/chalkduster"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:ellipsize="end" />
 
-                <Button
-                    android:id="@+id/btn_j1_mais3"
-                    style="@style/Widget.AppCompat.Button.Borderless"
-                    android:layout_width="0dp"
+                <TextView
+                    android:id="@+id/tv_pontuacao_jogador1"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginHorizontal="2dp"
-                    android:minHeight="48dp"
-                    android:text="@string/btn_mais_3"
-                    android:textColor="@color/vermelho_baralho"
-                    android:textStyle="bold"
-                    android:background="@drawable/botao_carta" />
+                    android:text="@string/pontuacao_inicial"
+                    android:textColor="@color/texto_ouro"
+                    android:textSize="64sp"
+                    android:fontFamily="@font/chalkduster"
+                    android:gravity="center"
+                    android:paddingVertical="2dp"
+                    android:shadowColor="#99000000"
+                    android:shadowRadius="6"
+                    android:shadowDx="2"
+                    android:shadowDy="2" />
 
-                <Button
-                    android:id="@+id/btn_j1_mais6"
-                    style="@style/Widget.AppCompat.Button.Borderless"
-                    android:layout_width="0dp"
+                <LinearLayout
+                    android:id="@+id/ll_botoes_jogador1"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginHorizontal="2dp"
-                    android:minHeight="48dp"
-                    android:text="@string/btn_mais_6"
-                    android:textColor="@color/vermelho_baralho"
-                    android:textStyle="bold"
-                    android:background="@drawable/botao_carta" />
+                    android:orientation="horizontal"
+                    android:layout_marginTop="4dp">
 
-                <Button
-                    android:id="@+id/btn_j1_mais9"
-                    style="@style/Widget.AppCompat.Button.Borderless"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginHorizontal="2dp"
-                    android:minHeight="48dp"
-                    android:text="@string/btn_mais_9"
-                    android:textColor="@color/vermelho_baralho"
-                    android:textStyle="bold"
-                    android:background="@drawable/botao_carta" />
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_j1_mais1"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="0dp"
+                        android:layout_height="48dp"
+                        android:layout_weight="1"
+                        android:layout_marginHorizontal="1dp"
+                        android:minWidth="0dp"
+                        android:paddingHorizontal="0dp"
+                        android:text="@string/btn_mais_1"
+                        android:textColor="@color/vermelho_baralho"
+                        android:textStyle="bold"
+                        android:textSize="13sp"
+                        android:background="@drawable/botao_carta" />
 
-                <Button
-                    android:id="@+id/btn_j1_mais12"
-                    style="@style/Widget.AppCompat.Button.Borderless"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginHorizontal="2dp"
-                    android:minHeight="48dp"
-                    android:text="@string/btn_mais_12"
-                    android:textColor="@color/vermelho_baralho"
-                    android:textStyle="bold"
-                    android:background="@drawable/botao_carta" />
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_j1_mais3"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="0dp"
+                        android:layout_height="48dp"
+                        android:layout_weight="1"
+                        android:layout_marginHorizontal="1dp"
+                        android:minWidth="0dp"
+                        android:paddingHorizontal="0dp"
+                        android:text="@string/btn_mais_3"
+                        android:textColor="@color/vermelho_baralho"
+                        android:textStyle="bold"
+                        android:textSize="13sp"
+                        android:background="@drawable/botao_carta" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_j1_mais6"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="0dp"
+                        android:layout_height="48dp"
+                        android:layout_weight="1"
+                        android:layout_marginHorizontal="1dp"
+                        android:minWidth="0dp"
+                        android:paddingHorizontal="0dp"
+                        android:text="@string/btn_mais_6"
+                        android:textColor="@color/vermelho_baralho"
+                        android:textStyle="bold"
+                        android:textSize="13sp"
+                        android:background="@drawable/botao_carta" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_j1_mais9"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="0dp"
+                        android:layout_height="48dp"
+                        android:layout_weight="1"
+                        android:layout_marginHorizontal="1dp"
+                        android:minWidth="0dp"
+                        android:paddingHorizontal="0dp"
+                        android:text="@string/btn_mais_9"
+                        android:textColor="@color/vermelho_baralho"
+                        android:textStyle="bold"
+                        android:textSize="13sp"
+                        android:background="@drawable/botao_carta" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_j1_mais12"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="0dp"
+                        android:layout_height="48dp"
+                        android:layout_weight="1"
+                        android:layout_marginHorizontal="1dp"
+                        android:minWidth="0dp"
+                        android:paddingHorizontal="0dp"
+                        android:text="@string/btn_mais_12"
+                        android:textColor="@color/vermelho_baralho"
+                        android:textStyle="bold"
+                        android:textSize="13sp"
+                        android:background="@drawable/botao_carta" />
+
+                </LinearLayout>
 
             </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <!-- Área Jogador 2 -->
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <!-- Card Equipe B -->
+        <com.google.android.material.card.MaterialCardView
             android:id="@+id/area_jogador2"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@color/verde_feltro_dark"
-            android:padding="12dp"
-            app:layout_constraintTop_toBottomOf="@id/area_jogador1"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
-
-            <TextView
-                android:id="@+id/tv_nome_jogador2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="@string/jogador_2"
-                android:textColor="@color/branco_carta"
-                android:textSize="20sp"
-                android:fontFamily="@font/chalkduster"
-                android:gravity="center"
-                android:maxLines="1"
-                android:ellipsize="end"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
-
-            <TextView
-                android:id="@+id/tv_pontuacao_jogador2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="@string/pontuacao_inicial"
-                android:textColor="@color/texto_ouro"
-                android:textSize="40sp"
-                android:fontFamily="@font/chalkduster"
-                android:gravity="center"
-                android:paddingVertical="8dp"
-                app:layout_constraintTop_toBottomOf="@id/tv_nome_jogador2"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
+            android:layout_marginTop="12dp"
+            app:cardBackgroundColor="@color/verde_feltro_dark"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="6dp"
+            app:strokeColor="@color/texto_ouro"
+            app:strokeWidth="1dp">
 
             <LinearLayout
-                android:id="@+id/ll_botoes_jogador2"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="8dp"
-                app:layout_constraintTop_toBottomOf="@id/tv_pontuacao_jogador2"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent">
+                android:orientation="vertical"
+                android:paddingHorizontal="10dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="6dp">
 
-                <Button
-                    android:id="@+id/btn_j2_mais1"
-                    style="@style/Widget.AppCompat.Button.Borderless"
-                    android:layout_width="0dp"
+                <TextView
+                    android:id="@+id/tv_nome_jogador2"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginHorizontal="2dp"
-                    android:minHeight="48dp"
-                    android:text="@string/btn_mais_1"
-                    android:textColor="@color/vermelho_baralho"
-                    android:textStyle="bold"
-                    android:background="@drawable/botao_carta" />
+                    android:text="@string/jogador_2"
+                    android:textColor="@color/branco_carta"
+                    android:textSize="20sp"
+                    android:fontFamily="@font/chalkduster"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:ellipsize="end" />
 
-                <Button
-                    android:id="@+id/btn_j2_mais3"
-                    style="@style/Widget.AppCompat.Button.Borderless"
-                    android:layout_width="0dp"
+                <TextView
+                    android:id="@+id/tv_pontuacao_jogador2"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginHorizontal="2dp"
-                    android:minHeight="48dp"
-                    android:text="@string/btn_mais_3"
-                    android:textColor="@color/vermelho_baralho"
-                    android:textStyle="bold"
-                    android:background="@drawable/botao_carta" />
+                    android:text="@string/pontuacao_inicial"
+                    android:textColor="@color/texto_ouro"
+                    android:textSize="64sp"
+                    android:fontFamily="@font/chalkduster"
+                    android:gravity="center"
+                    android:paddingVertical="2dp"
+                    android:shadowColor="#99000000"
+                    android:shadowRadius="6"
+                    android:shadowDx="2"
+                    android:shadowDy="2" />
 
-                <Button
-                    android:id="@+id/btn_j2_mais6"
-                    style="@style/Widget.AppCompat.Button.Borderless"
-                    android:layout_width="0dp"
+                <LinearLayout
+                    android:id="@+id/ll_botoes_jogador2"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginHorizontal="2dp"
-                    android:minHeight="48dp"
-                    android:text="@string/btn_mais_6"
-                    android:textColor="@color/vermelho_baralho"
-                    android:textStyle="bold"
-                    android:background="@drawable/botao_carta" />
+                    android:orientation="horizontal"
+                    android:layout_marginTop="4dp">
 
-                <Button
-                    android:id="@+id/btn_j2_mais9"
-                    style="@style/Widget.AppCompat.Button.Borderless"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginHorizontal="2dp"
-                    android:minHeight="48dp"
-                    android:text="@string/btn_mais_9"
-                    android:textColor="@color/vermelho_baralho"
-                    android:textStyle="bold"
-                    android:background="@drawable/botao_carta" />
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_j2_mais1"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="0dp"
+                        android:layout_height="48dp"
+                        android:layout_weight="1"
+                        android:layout_marginHorizontal="1dp"
+                        android:minWidth="0dp"
+                        android:paddingHorizontal="0dp"
+                        android:text="@string/btn_mais_1"
+                        android:textColor="@color/vermelho_baralho"
+                        android:textStyle="bold"
+                        android:textSize="13sp"
+                        android:background="@drawable/botao_carta" />
 
-                <Button
-                    android:id="@+id/btn_j2_mais12"
-                    style="@style/Widget.AppCompat.Button.Borderless"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginHorizontal="2dp"
-                    android:minHeight="48dp"
-                    android:text="@string/btn_mais_12"
-                    android:textColor="@color/vermelho_baralho"
-                    android:textStyle="bold"
-                    android:background="@drawable/botao_carta" />
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_j2_mais3"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="0dp"
+                        android:layout_height="48dp"
+                        android:layout_weight="1"
+                        android:layout_marginHorizontal="1dp"
+                        android:minWidth="0dp"
+                        android:paddingHorizontal="0dp"
+                        android:text="@string/btn_mais_3"
+                        android:textColor="@color/vermelho_baralho"
+                        android:textStyle="bold"
+                        android:textSize="13sp"
+                        android:background="@drawable/botao_carta" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_j2_mais6"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="0dp"
+                        android:layout_height="48dp"
+                        android:layout_weight="1"
+                        android:layout_marginHorizontal="1dp"
+                        android:minWidth="0dp"
+                        android:paddingHorizontal="0dp"
+                        android:text="@string/btn_mais_6"
+                        android:textColor="@color/vermelho_baralho"
+                        android:textStyle="bold"
+                        android:textSize="13sp"
+                        android:background="@drawable/botao_carta" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_j2_mais9"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="0dp"
+                        android:layout_height="48dp"
+                        android:layout_weight="1"
+                        android:layout_marginHorizontal="1dp"
+                        android:minWidth="0dp"
+                        android:paddingHorizontal="0dp"
+                        android:text="@string/btn_mais_9"
+                        android:textColor="@color/vermelho_baralho"
+                        android:textStyle="bold"
+                        android:textSize="13sp"
+                        android:background="@drawable/botao_carta" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_j2_mais12"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="0dp"
+                        android:layout_height="48dp"
+                        android:layout_weight="1"
+                        android:layout_marginHorizontal="1dp"
+                        android:minWidth="0dp"
+                        android:paddingHorizontal="0dp"
+                        android:text="@string/btn_mais_12"
+                        android:textColor="@color/vermelho_baralho"
+                        android:textStyle="bold"
+                        android:textSize="13sp"
+                        android:background="@drawable/botao_carta" />
+
+                </LinearLayout>
 
             </LinearLayout>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
 
         <!-- Botões administrativos -->
         <LinearLayout
             android:id="@+id/ll_botoes_admin"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_marginTop="24dp"
-            app:layout_constraintTop_toBottomOf="@id/area_jogador2"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
+            android:layout_marginTop="20dp">
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_historico"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:minHeight="48dp"
+                android:minHeight="52dp"
                 android:text="@string/btn_historico"
                 android:textColor="@color/branco_carta"
                 android:textStyle="bold"
-                android:backgroundTint="@color/madeira_botao" />
+                app:backgroundTint="@color/madeira_botao"
+                app:cornerRadius="8dp" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_zerar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:minHeight="48dp"
+                android:minHeight="52dp"
                 android:text="@string/btn_zerar"
                 android:textColor="@color/branco_carta"
                 android:textStyle="bold"
-                android:backgroundTint="@color/madeira_botao" />
+                app:backgroundTint="@color/madeira_botao"
+                app:cornerRadius="8dp" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_nomes"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:minHeight="48dp"
+                android:minHeight="52dp"
                 android:text="@string/btn_nomes"
                 android:textColor="@color/branco_carta"
                 android:textStyle="bold"
-                android:backgroundTint="@color/madeira_botao" />
+                app:backgroundTint="@color/madeira_botao"
+                app:cornerRadius="8dp" />
 
         </LinearLayout>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 
 </ScrollView>
